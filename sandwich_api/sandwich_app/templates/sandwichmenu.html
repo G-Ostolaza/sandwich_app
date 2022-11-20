@@ -9,10 +9,13 @@
 </head>
 
 <body>
-    <h1>{{ sandwich|title }}</h1>
-    <p>Keep refreshing the page for a new sandwich!</p>
-    <a href="/sandwich">Return to Sandwich home</a>
+    <h1>{{ ingredient_type|title }}</h1>
 
+    <ul>
+        {% for ingredient in ingredients %}
+        <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
