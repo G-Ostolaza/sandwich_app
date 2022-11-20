@@ -7,9 +7,9 @@ import random
 
 
 ingredients = {
-    'Meats':['Turkey', 'Veggie Burger', 'Ham'],
-    'Cheeses': ['Provolone', 'Pepper Jack', 'Fondue'],
-    'Toppings': ['Onions', 'Cream Cheese', 'Relish']
+    'meats':['Turkey', 'Veggie Burger', 'Ham'],
+    'cheeses': ['Provolone', 'Pepper Jack', 'Fondue'],
+    'toppings': ['Onions', 'Cream Cheese', 'Relish']
 }
 class SandwichappView(View):
     def get(self, request):
@@ -38,4 +38,16 @@ class SandwichGeneratorView(View):
         selected_cheese = random.choice(ingredients['cheeses'])
         selected_toppings = random.choice(ingredients['toppings'])
         sandwich = f'{selected_meat} & {selected_cheese} with {selected_toppings}'
-        return render(request, 'sandwich_generator.html', context = { 'sandwich' : sandwich})
+        return render(
+            request, 'sandwich_generator.html', 
+            context = {'sandwich' : sandwich}
+            )
+
+class SandwichMenuView(View):
+    def get(self, request):
+        return render(
+            request = request,
+            template_name = 'sandwichmenu.html',
+            context = {'ingredients': ingredients.keys()}
+        )
+        
