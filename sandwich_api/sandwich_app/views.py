@@ -7,9 +7,9 @@ import random
 
 
 ingredients = {
-    'meats':['Turkey', 'Veggie Burger', 'Ham'],
-    'cheeses': ['Provolone', 'Pepper Jack', 'Fondue'],
-    'toppings': ['Onions', 'Cream Cheese', 'Relish']
+    'meats':['Turkey', 'Veggie Burger', 'Ham', 'Steak', 'Chicken'],
+    'cheeses': ['Provolone', 'Pepper Jack', 'Fondue', 'American Cheese', 'Swiss'],
+    'toppings': ['Onions', 'Cream Cheese', 'Relish','Chilli Cheese', 'Red Onions']
 }
 class SandwichappView(View):
     def get(self, request):
