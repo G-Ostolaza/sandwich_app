@@ -45,9 +45,16 @@ class SandwichGeneratorView(View):
 
 class SandwichMenuView(View):
     def get(self, request):
-        return render(
-            request = request,
-            template_name = 'sandwichmenu.html',
-            context = {'ingredients': ingredients.keys()}
-        )
-        
+            sandwich_List = []
+            for _ in range (150):
+                selected_meat = random.choice(ingredients['meats'])
+                selected_cheese = random.choice(ingredients['cheeses'])
+                selected_toppings = random.choice(ingredients['toppings'])
+                random_sandwich = f'{selected_meat} & {selected_cheese} with {selected_toppings}'
+                if random_sandwich not in sandwich_List:
+                    sandwich_List.append(random_sandwich)
+            return render(
+                request = request,
+                template_name='sandwichmenu.html',
+                context = {'sandwich_list' : sandwich_List}
+                )
