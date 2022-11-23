@@ -10,8 +10,12 @@
 
 <body>
     <h1>Welcome to the Sandwich Menu</h1>
+    <ul>
+        {% for sandwich in sandwich_list %}
+            <li>{{ sandwich }}</li>
+        {% endfor %}
+    </ul>
 
-    <h2>{{ sandwich|title }}</h2>
 </body>
 
 </html>
